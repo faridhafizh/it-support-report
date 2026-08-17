@@ -1,0 +1,248 @@
+:root {
+  --navy: #1f3864;
+  --blue-med: #2e5395;
+  --blue-light: #d9e2f3;
+  --grey-light: #f2f2f2;
+  --red: #c00000;
+  --amber: #7f6000;
+  --green: #375623;
+  --border: #d9d9d9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #222;
+  background: #f5f6f8;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 20px 60px;
+}
+
+header.app-header {
+  background: var(--navy);
+  color: #fff;
+  padding: 18px 20px;
+}
+
+header.app-header h1 {
+  margin: 0;
+  font-size: 20px;
+}
+
+header.app-header p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: #cdd8ee;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin: 20px 0 28px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 16px;
+  text-align: center;
+}
+
+.card .label {
+  font-size: 11px;
+  font-weight: bold;
+  color: #666;
+  text-transform: uppercase;
+}
+
+.card .value {
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--navy);
+  margin-top: 4px;
+}
+
+.panel {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.panel-header {
+  background: var(--blue-med);
+  color: #fff;
+  padding: 10px 16px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.panel-body {
+  padding: 16px;
+}
+
+form.ticket-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px 16px;
+}
+
+form.ticket-form .full {
+  grid-column: 1 / -1;
+}
+
+.field label {
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  color: #444;
+  margin-bottom: 4px;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  font-size: 13px;
+  font-family: inherit;
+}
+
+.field textarea {
+  min-height: 60px;
+  resize: vertical;
+}
+
+.actions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+button.primary {
+  background: var(--navy);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button.primary:hover {
+  background: var(--blue-med);
+}
+
+button.primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+button.secondary {
+  background: #fff;
+  color: var(--navy);
+  border: 1px solid var(--navy);
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table.tickets {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+}
+
+table.tickets th {
+  background: var(--navy);
+  color: #fff;
+  text-align: left;
+  padding: 8px 10px;
+  white-space: nowrap;
+}
+
+table.tickets td {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+table.tickets tr:hover td {
+  background: #fafbff;
+}
+
+.badge {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.badge.status-open { background: #f8cbad; color: var(--red); }
+.badge.status-in-progress { background: #ffe699; color: var(--amber); }
+.badge.status-menunggu-client { background: #bdd7ee; color: var(--blue-med); }
+.badge.status-closed { background: #c6e0b4; color: var(--green); }
+
+.badge.prio-tinggi { background: #f8cbad; color: var(--red); }
+.badge.prio-sedang { background: #ffe699; color: var(--amber); }
+.badge.prio-rendah { background: #c6e0b4; color: var(--green); }
+
+.msg {
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  margin-bottom: 14px;
+}
+
+.msg.error {
+  background: #fdecea;
+  color: var(--red);
+  border: 1px solid #f5c2bc;
+}
+
+.msg.success {
+  background: #eaf6e9;
+  color: var(--green);
+  border: 1px solid #bfe3bd;
+}
+
+.empty {
+  padding: 24px;
+  text-align: center;
+  color: #888;
+  font-size: 13px;
+}
+
+.status-select {
+  padding: 5px 8px;
+  border-radius: 5px;
+  border: 1px solid var(--border);
+  font-size: 12px;
+}
+
+.muted {
+  color: #888;
+  font-size: 12px;
+}
