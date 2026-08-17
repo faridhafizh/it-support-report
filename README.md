@@ -15,11 +15,11 @@
 
 | 📊 WebUI Dashboard & Live Ticket Management |
 | :-----------------------------------------: |
-| ![WebUI Dashboard Screenshot](./Dashboard_app.png) |
+| ![WebUI Dashboard Screenshot](./Example/Dashboard_app.png) |
 
 | ⚡ Next.js Terminal Execution |
 | :---------------------------: |
-| ![Terminal CLI Screenshot](./npm_terminal.png) |
+| ![Terminal CLI Screenshot](./Example/npm_terminal.png) |
 
 ---
 
@@ -159,8 +159,8 @@ it-support-webui/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/it-support-webui.git
-cd it-support-webui
+git clone https://github.com/faridhafizh/it-support-report.git
+cd it-support-report
 ```
 
 ### 2. Install Dependencies
@@ -358,15 +358,6 @@ To store the Excel file on a network share or alternate folder, update `FILE_PAT
 ```javascript
 export const FILE_PATH = path.join(process.cwd(), "data", "IT_Support_Log_Keluhan_Client.xlsx");
 ```
-
----
-
-## 🗺️ Future Roadmap
-
-- [ ] **Export Reports**: One-click export of filtered tickets to PDF / CSV summaries.
-- [ ] **Authentication & Roles**: Role-Based Access Control (Admin, Operator, Read-Only Viewer).
-- [ ] **Webhook Alerts**: Instant notifications via Telegram, Discord, or WhatsApp when high-priority tickets are created.
-- [ ] **Hybrid Database Sync**: Dual-write support for SQLite / PostgreSQL alongside Excel.
 
 ---
 
