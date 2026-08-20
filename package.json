@@ -1,14 +1,18 @@
 {
   "name": "it-support-webui",
   "version": "1.0.0",
+  "type": "module",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "next dev --webpack",
+    "build": "next build --webpack",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "seed": "node scripts/seed-admin.js",
+    "test": "node scripts/test-integrity.js"
   },
   "dependencies": {
+    "bcryptjs": "^3.0.3",
     "exceljs": "^4.4.0",
     "next": "^16.3.1",
     "postcss": "^8.5.26",

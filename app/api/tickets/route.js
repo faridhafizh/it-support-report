@@ -1,11 +1,19 @@
 import { NextResponse } from "next/server";
-import { getTickets, addTicket, OPTIONS } from "../../../lib/xlsx";
+import { getTickets, addTicket, OPTIONS } from "@/lib/xlsx";
+import { getCurrentUser } from "@/lib/auth";
 
-// Selalu baca ulang file Excel, jangan pernah di-cache oleh Next.js.
 export const dynamic = "force-dynamic";
 
-export async function GET() {
+export async function GET(request) {
   try {
+    const user = await getCurrentUser(request);
+    if (!user) {
+      return NextResponse.json(
+        { error: "Akses ditolak. Silakan login terlebih dahulu." },
+        { status: 401 }
+      );
+    }
+
     const tickets = await getTickets();
     return NextResponse.json({ tickets, options: OPTIONS });
   } catch (err) {
@@ -15,6 +23,14 @@ export async function GET() {
 
 export async function POST(request) {
   try {
+    const user = await getCurrentUser(request);
+    if (!user) {
+      return NextResponse.json(
+        { error: "Akses ditolak. Silakan login terlebih dahulu." },
+        { status: 401 }
+      );
+    }
+
     const body = await request.json();
 
     if (!body.namaClient || String(body.namaClient).trim() === "") {
@@ -32,7 +48,7 @@ export async function POST(request) {
       deskripsi: body.deskripsi,
       prioritas: body.prioritas || "Sedang",
       status: body.status || "Open",
-      pic: body.pic,
+      pic: body.pic || user.name,
       tanggalSelesai: body.tanggalSelesai,
       solusi: body.solusi,
       catatan: body.catatan,

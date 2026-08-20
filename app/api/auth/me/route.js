@@ -1,5 +1,4 @@
 import { NextResponse } from "next/server";
-import { getSummary } from "@/lib/xlsx";
 import { getCurrentUser } from "@/lib/auth";
 
 export const dynamic = "force-dynamic";
@@ -9,13 +8,21 @@ export async function GET(request) {
     const user = await getCurrentUser(request);
     if (!user) {
       return NextResponse.json(
-        { error: "Akses ditolak. Silakan login terlebih dahulu." },
+        { authenticated: false, user: null },
         { status: 401 }
       );
     }
 
-    const summary = await getSummary();
-    return NextResponse.json(summary);
+    return NextResponse.json({
+      authenticated: true,
+      user: {
+        id: user.id,
+        username: user.username,
+        name: user.name,
+        role: user.role,
+        isAdmin: user.isAdmin,
+      },
+    });
   } catch (err) {
     return NextResponse.json({ error: err.message }, { status: 500 });
   }
