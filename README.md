@@ -149,39 +149,53 @@ it-support-webui/
 
 ---
 
+---
+
 ## 🚀 Quick Start & Installation
 
 ### Prerequisites
 
-- **Node.js**: `v18.0.0` or higher installed ([Download Node.js](https://nodejs.org/))
-- **npm** (bundled with Node.js) or **pnpm** / **yarn**
+- **Node.js**: `v18.0.0` or higher ([Download Node.js](https://nodejs.org/))
+- **npm** (bundled with Node.js)
 
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/faridhafizh/it-support-report.git
-cd it-support-report
-```
-
-### 2. Install Dependencies
+### 1. Clone & Install
 
 ```bash
+git clone https://github.com/your-username/it-support-webui.git
+cd it-support-webui
 npm install
 ```
 
-### 3. Run Development Server
+### 2. Seed the Initial Administrator Account
+
+```bash
+npm run seed
+```
+*Default credentials:*
+- **Username**: `admin`
+- **Password**: `Admin#Support2026`
+- **Role**: `IT Administrator`
+
+### 3. Start Development Server
 
 ```bash
 npm run dev
 ```
-
 Open [http://localhost:3000](http://localhost:3000) in your web browser.
 
-### 4. Build for Production (Optional)
+---
+
+## 🌱 CLI Admin Seeding
+
+You can seed or reset an administrator account anytime using custom credentials:
 
 ```bash
-npm run build
-npm run start
+node scripts/seed-admin.js <username> "<Full Name>" "<password>" "<role>"
+```
+
+Example:
+```bash
+node scripts/seed-admin.js farid.admin "Farid Administrator" "SuperSecretPass2026!" "IT Administrator"
 ```
 
 ---
