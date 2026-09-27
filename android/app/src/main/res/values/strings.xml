@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">IT Support Log</string>
+    <string name="login_title">IT Support Management</string>
+    <string name="login_subtitle">Silakan masuk dengan akun IT Support</string>
+    <string name="server_url">URL Server API</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="btn_login">Login</string>
+    <string name="logout">Keluar</string>
+
+    <string name="total_tickets">Total Tiket</string>
+    <string name="open_tickets">Open</string>
+    <string name="progress_tickets">In Progress</string>
+    <string name="closed_tickets">Closed</string>
+    <string name="high_priority">Prioritas Tinggi</string>
+
+    <string name="add_ticket">Tambah Tiket Baru</string>
+    <string name="edit_ticket">Edit Tiket</string>
+    <string name="filter_status">Filter Status</string>
+    <string name="all">Semua</string>
+    <string name="search_hint">Cari nama client / deskripsi...</string>
+
+    <string name="save">Simpan Tiket</string>
+    <string name="cancel">Batal</string>
+    <string name="close">Tutup</string>
+
+    <string name="client_name">Nama Client *</string>
+    <string name="department">Departemen / Unit</string>
+    <string name="category">Kategori Masalah</string>
+    <string name="priority">Prioritas</string>
+    <string name="status">Status</string>
+    <string name="description">Deskripsi Keluhan *</string>
+    <string name="assigned_pic">PIC Ditugaskan</string>
+    <string name="solution">Solusi / Penanganan</string>
+    <string name="notes">Catatan Tambahan</string>
+
+    <string name="confirm_logout">Apakah Anda yakin ingin keluar?</string>
+    <string name="error_fill_fields">Harap isi bidang yang wajib (Client &amp; Deskripsi)</string>
+</resources>
