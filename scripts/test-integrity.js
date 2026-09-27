@@ -197,6 +197,7 @@ async function runTests() {
   console.log("\n==================================================");
   console.log("🎉 ALL TESTS COMPLETED SUCCESSFULLY!");
   console.log("==================================================");
+  process.exit(0);
 }
 
 runTests().catch((err) => {
